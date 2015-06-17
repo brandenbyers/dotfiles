@@ -43,8 +43,8 @@
   remote = origin
   merge = refs/heads/master
 [user]
-	name = brndnb
-	email = branden@fermup.com
+	name = brandenbyers
+	email = branden@brandenbyers.com
 [credential]
 	helper = osxkeychain
 [core]

@@ -99,7 +99,7 @@ ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Cabal Haskell
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+# export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Python
 # export PATH="/usr/local/share/python:$PATH"

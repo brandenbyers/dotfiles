@@ -20,6 +20,9 @@ set clipboard=unnamedplus,unnamed,autoselect,exclude:.* "Make yank copy to syste
 set shortmess +=I " hide VIM intro message
 set timeoutlen=1000 ttimeoutlen=0 " eliminate delays on ESC
 set foldlevelstart=20
+set ttyfast " send more character for redraws
+set mouse=a " enable mouse use in all modes
+set ttymouse=xterm2
 
 imap <C-c> <CR><Esc>O
 
@@ -118,10 +121,10 @@ map <Leader>ct :!ctags -R .<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" " Get off my lawn
+" nnoremap <Left> :echoe "Use h"<CR>
+" nnoremap <Up> :echoe "Use k"<CR>
+" nnoremap <Down> :echoe "Use j"<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
@@ -177,7 +180,7 @@ let g:sneak#streak = 1
 " CoffeeScript
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
-command -nargs=1 C CoffeeCompile | :<args>
+" command -nargs=1 C CoffeeCompile | :<args>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
