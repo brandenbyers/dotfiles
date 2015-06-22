@@ -26,6 +26,9 @@ set ttymouse=xterm2
 
 imap <C-c> <CR><Esc>O
 
+" Save file
+inoremap <c-s> <Esc>:Update<CR>
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -40,9 +43,6 @@ filetype plugin indent on
 
 augroup vimrcEx
   autocmd!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -96,15 +96,9 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
-" Color scheme
-"colorscheme github
-"highlight NonText guibg=#060606
-"highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
 " set number
 set numberwidth=5
 
@@ -138,6 +132,9 @@ nnoremap <Leader>r :RunInInteractiveShell<space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
+
+" Airline Fonts
+let g:airline_powerline_fonts = 1
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow

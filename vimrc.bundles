@@ -52,6 +52,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'yonchu/accelerated-smooth-scroll'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
