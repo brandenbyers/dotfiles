@@ -63,6 +63,9 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
+" Vim markdown highlight YAML frontmatter
+let g:vim_markdown_frontmatter=1
+
 " Softtabs, 4 spaces
 set tabstop=2
 set shiftwidth=2
@@ -146,20 +149,24 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Highlight previous after indentation
+:vnoremap < <gv
+:vnoremap > >gv
+
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 let g:syntastic_html_tidy_ignore_errors=["plain text isn't allowed in <head> elements", " proprietary attribute \"ng-", "trimming empty <span>", "is not recognized!", "discarding unexpected"]
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-let g:syntastic_javascript="jshint"
+let g:syntastic_javascript_checkers=['eslint']
 
 " configure YouCompleteMe
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
-" configure delimitMate
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
+" " configure delimitMate
+" let g:delimitMate_expand_cr = 1
+" let g:delimitMate_expand_space = 1
 
 " Trigger configuration. Do not use <tab> if you use YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-e>"
@@ -185,6 +192,11 @@ let g:sneak#streak = 1
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
 " command -nargs=1 C CoffeeCompile | :<args>
+
+" Vim Pad directory
+let g:pad#dir = "/Users/branden/Dropbox/Notes"
+let g:pad#search_backend = "ag"
+let g:pad#window_height = 12
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
