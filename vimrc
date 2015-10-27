@@ -186,6 +186,7 @@ let g:mustache_abbreviations = 1
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
+call togglebg#map("")
 
 " Vim Slime
 let g:slime_target = "tmux"
