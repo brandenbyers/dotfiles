@@ -29,6 +29,9 @@ imap <C-c> <CR><Esc>O
 " Save file
 inoremap <c-s> <Esc>:Update<CR>
 
+" Better pasting with indentation
+nnoremap <leader>p p`[v`]=`]`
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -164,6 +167,9 @@ let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
 " " configure delimitMate
 " let g:delimitMate_expand_cr = 1
 " let g:delimitMate_expand_space = 1
@@ -193,10 +199,14 @@ vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 map <leader>c :CoffeeCompile<CR>
 " command -nargs=1 C CoffeeCompile | :<args>
 
+" TernJS
+let g:tern_map_keys = 1
+let g:tern_map_prefix = '<leader>'
+
 " Vim Pad directory
-let g:pad#dir = "/Users/branden/Dropbox/Notes"
+let g:pad#dir = "/Users/branden/Dropbox/Notes/fermup"
 let g:pad#search_backend = "ag"
-let g:pad#window_height = 12
+let g:pad#window_height = 42
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
