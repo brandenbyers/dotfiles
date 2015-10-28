@@ -51,3 +51,9 @@
 	default = simple
 [github]
 	user = brndnb
+[rerere]
+	enabled = true
+[branch]
+	autosetuprebase = always
+[branch "*branch-name*"]
+	rebase = true
