@@ -88,7 +88,7 @@ end)
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"},"F3", function()
   local macbook = "Color LCD"
   local windowLayout = {
-      {"Google Chrome", nil, macbook, hs.layout.left70,  nil, nil},
+      {"Vivaldi", nil, macbook, hs.layout.left70,  nil, nil},
       {"iTerm", nil, macbook, hs.layout.right30, nil, nil},
       {"Messages", nil, macbook, hs.layout.right30, nil, nil},
       {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
