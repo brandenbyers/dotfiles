@@ -1,0 +1,34 @@
+# [Created by task 2.5.1 7/15/2016 12:41:54]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme
+include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-dark-256.theme
+
+# US Holidays
+calendar.holidays=sparse
+include /usr/local/share/doc/task/rc/holidays.en-US.rc
+
+# Inthe.AM configuration
+taskd.certificate=~/.task/private.certificate.pem
+taskd.key=~/.task/private.key.pem
+taskd.ca=~/.task/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/byersbs/5b8a0c3b-569d-4c9d-ab3d-c56895effea9
+taskd.trust=ignore hostname
+report.complete-simple.description=Simple completed list
+report.complete-simple.columns=modified,project,description.count
+report.complete-simple.labels=Done,Proj,Desc
+report.complete-simple.sort=modified+\/
+report.complete-simple.filter=status:completed

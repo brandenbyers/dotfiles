@@ -1,0 +1,16 @@
+" Autocomplete using Firefox Awesomebar subsystem
+" set complete=l
+
+" Hide navbar
+" set gui=nonavigation
+style -name ublick * #nav-bar * { visibility: visible;  }
+
+" Load configuration file into current browser, useful for updating after editing this file.
+command! sourcerc :source ~/.vimperatorrc
+
+:noremap j 5j
+:noremap k 5k
+
+:set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+:highlight Hint font-size:110%;color:white;background-color:#CC0001;padding:2px;
