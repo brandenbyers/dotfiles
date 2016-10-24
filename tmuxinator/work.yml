@@ -1,0 +1,75 @@
+# ~/.tmuxinator/home.yml
+
+name: home
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t home
+#
+windows:
+  - task:
+      layout: 08d9,318x74,0,0[318x57,0,0{99x57,0,0[99x9,0,0,159,99x28,0,10,167,99x18,0,39,163],113x57,100,0,162,104x57,214,0[104x16,214,0,164,104x24,214,17,165,104x15,214,42,166]},318x16,0,58,160]
+      panes:
+        - task sync && tmux select-pane -t 4 && clear && task blocked
+        - task complete-simple project:inin
+        - task next project:inin
+        - task ready
+        - task ghistory.monthly
+        - task summary
+        - task calendar
+        - task burndown.daily
+  - collaborate:
+      layout: even-horizontal
+      root: ~/Projects/ios-collaborate
+      panes:
+        -
+        -
+  - api-tests:
+      layout: even-horizontal
+      root: ~/Projects/mobile-api-tests
+      panes:
+        -
+        -
+        -
+  - make-org:
+      layout: even-horizontal
+      root: ~/Projects/make-org
+      panes:
+        -
+        -
+        -
+  - hubot:
+      layout: even-horizontal
+      root: ~/Projects/hubot-mobile
+      panes:
+        -
+        -
+        - source ~/bin/wrex-pane-id.sh && ./bin/hubot --adapter purecloud --alias wrex
+  - scratch:
+      layout: even-horizontal
+      root: ~/Code/scratch
+      panes:
+        -
+        - vim
+        -
