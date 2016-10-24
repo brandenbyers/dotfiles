@@ -35,10 +35,6 @@
   changed = green
   untracked = cyan
 
-# Use `origin` as the default remote on the `master` branch in all cases
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
 [user]
 	name = brandenbyers
 	email = branden@brandenbyers.com

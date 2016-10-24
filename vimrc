@@ -23,6 +23,7 @@ set foldlevelstart=20
 set ttyfast " send more character for redraws
 set mouse=a " enable mouse use in all modes
 set ttymouse=xterm2
+set hlsearch
 
 imap <C-c> <CR><Esc>O
 
@@ -62,8 +63,6 @@ augroup vimrcEx
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
 
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
 " Vim markdown highlight YAML frontmatter
@@ -85,6 +84,7 @@ nmap <leader>bs :CtrlPMRU<cr>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+autocmd FileType taskpaper setlocal nolist
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -162,10 +162,8 @@ let g:syntastic_html_tidy_ignore_errors=["plain text isn't allowed in <head> ele
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 let g:syntastic_javascript_checkers=['eslint']
 
-" configure YouCompleteMe
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>

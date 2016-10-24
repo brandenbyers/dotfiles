@@ -90,6 +90,8 @@ export PATH=".git/safe/../../bin:$PATH"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+export PATH=$PATH:$HOME/bin
+
 # syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
@@ -110,3 +112,9 @@ export NVM_DIR="/Users/branden/.nvm"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Swift 2.2
+export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+
+# Tmuxinator
+source ~/bin/tmuxinator.zsh
