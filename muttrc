@@ -1,0 +1,70 @@
+# ~/.muttrc
+
+set timeout=30
+
+set smtp_url="smtps://branden.byers@inin.com/"
+set smtp_pass=""
+set folder="imaps://branden.byers@inin.com@outlook.office365.com/"
+set spoolfile="+Inbox"
+set postponed="+Drafts"
+set record="+Sent Items"
+
+set sort=threads
+set sort_aux=reverse-last-date-received
+set pager_stop
+set fast_reply
+set include
+set reverse_name
+set envelope_from
+
+set editor="vim"
+
+set sleep_time=0
+
+set smart_wrap
+
+macro index y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
+
+auto_view text/html
+
+source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+
+# Vim-like keybindings
+
+# Index
+
+bind index j next-entry
+bind index k previous-entry
+bind index J next-thread
+bind index K previous-thread
+
+bind index / search
+bind index ? search-reverse
+bind index n search-next
+bind index N search-opposite
+
+bind index gg first-entry
+bind index G last-entry
+
+bind index \Cd half-down
+bind index \Cu half-up
+
+bind index l collapse-thread
+bind index z collapse-all
+
+bind index r reply
+bind index a group-reply
+bind index L list-reply
+
+bind index h limit
+
+# '?' is used for search-opposite
+bind index \Ch help
+
+# Always start with threads collapsed and with the most recent thread selected
+push <collapse-all><last-entry>
+
+# Pager
+
+bind pager j next-line
+bind pager k previous-line

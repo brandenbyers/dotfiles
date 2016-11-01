@@ -1,6 +1,6 @@
 # ~/.tmuxinator/home.yml
 
-name: home
+name: work
 root: ~/
 
 # Optional tmux socket
@@ -65,11 +65,14 @@ windows:
       panes:
         -
         -
-        - source ~/bin/wrex-pane-id.sh && ./bin/hubot --adapter purecloud --alias wrex
+        -
+  - cmus:
+      panes:
+        - cmus
   - scratch:
       layout: even-horizontal
       root: ~/Code/scratch
       panes:
         -
-        - vim
+        -
         -
