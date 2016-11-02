@@ -66,6 +66,10 @@ windows:
         -
         -
         -
+  - mail:
+      panes:
+        - mutt
+        - profanity
   - cmus:
       panes:
         - cmus
