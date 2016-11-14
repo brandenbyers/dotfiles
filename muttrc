@@ -64,7 +64,11 @@ bind index \Ch help
 # Always start with threads collapsed and with the most recent thread selected
 push <collapse-all><last-entry>
 
+# Fetch new mail
+bind index "^" imap-fetch-mail
+
 # Pager
 
 bind pager j next-line
 bind pager k previous-line
+macro pager \Cu "|urlview<enter>" "call urlview to open links"

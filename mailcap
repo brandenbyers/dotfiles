@@ -1,5 +1,3 @@
-# text/html;                      links %s; nametemplate=%s.html
-# text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
 # MS Word documents
 application/msword; ~/.mutt/view_attachment.sh %s "-" '/Applications/TextEdit.app'
 
@@ -14,7 +12,9 @@ image/gif; ~/.mutt/view_attachment.sh %s gif
 application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
-text/html; ~/.mutt/view_attachment.sh %s html
+# text/html; ~/.mutt/view_attachment.sh %s html
+text/html;                      links %s; nametemplate=%s.html
+text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
 
 # Unidentified files
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"

@@ -11,6 +11,9 @@ export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# Use exit or logout instead of ctrl-d
+setopt ignoreeof
+
 # completion
 autoload -U compinit
 compinit
