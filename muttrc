@@ -2,9 +2,8 @@
 
 set timeout=30
 
-set smtp_url="smtps://branden.byers@inin.com/"
-set smtp_pass=""
-set folder="imaps://branden.byers@inin.com@outlook.office365.com/"
+set smtp_url="smtps://branden.byers@genesys.com/"
+set folder="imaps://branden.byers@genesys.com@outlook.office365.com/EWS/Exchange.asmx"
 set spoolfile="+Inbox"
 set postponed="+Drafts"
 set record="+Sent Items"
@@ -58,6 +57,12 @@ bind index L list-reply
 
 bind index h limit
 
+bind index 'D' delete-thread
+bind pager 'D' delete-thread
+
+bind index 'U' undelete-thread
+bind pager 'U' undelete-thread
+
 # '?' is used for search-opposite
 bind index \Ch help
 
@@ -72,3 +77,6 @@ bind index "^" imap-fetch-mail
 bind pager j next-line
 bind pager k previous-line
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+# encrypted IMAP/SMTP passwords
+# source "gpg -d ~/.mutt/password.gpg |"

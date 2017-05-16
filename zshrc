@@ -121,3 +121,19 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PA
 
 # Tmuxinator
 source ~/bin/tmuxinator.zsh
+
+# Pyenv Python
+eval "$(pyenv init -)"
+
+# Todo.txt
+source /usr/local/Cellar/todo-txt/2.10/etc/bash_completion.d/todo_completion complete -F _todo t
+alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/Dropbox/Notes/todo/todo.cfg'
+
+BASHPROFILE="$HOME/.bash_profile"
+if [[ -n $BASHPROFILE ]]; then
+  source $BASHPROFILE
+fi
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi

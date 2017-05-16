@@ -1,13 +1,13 @@
-local function keyCode(key)
-  return function() hs.eventtap.keyStroke({}, key) end
-end
-
-hs.hotkey.bind({"shift", "ctrl"}, 'h', keyCode('left') ,  nil,   keyCode('left'))
-hs.hotkey.bind({"shift", "ctrl"}, 'j', keyCode('down') ,  nil,   keyCode('down') )
-hs.hotkey.bind({"shift", "ctrl"}, 'k', keyCode('up')   ,  nil,   keyCode('up') )
-hs.hotkey.bind({"shift", "ctrl"}, 'l', keyCode('right'),  nil,   keyCode('right') )
-
-
+-- local function keyCode(key)
+--   return function() hs.eventtap.keyStroke({}, key) end
+-- end
+--
+-- hs.hotkey.bind({"shift", "ctrl"}, 'h', keyCode('left') ,  nil,   keyCode('left'))
+-- hs.hotkey.bind({"shift", "ctrl"}, 'j', keyCode('down') ,  nil,   keyCode('down') )
+-- hs.hotkey.bind({"shift", "ctrl"}, 'k', keyCode('up')   ,  nil,   keyCode('up') )
+-- hs.hotkey.bind({"shift", "ctrl"}, 'l', keyCode('right'),  nil,   keyCode('right') )
+--
+--
 
 -- hattip https://github.com/lodestone/hyper-hacks
 -- hattip https://gist.github.com/ttscoff/cce98a711b5476166792d5e6f1ac5907
@@ -176,71 +176,34 @@ hs.hotkey.bind({"shift", "ctrl"}, 'l', keyCode('right'),  nil,   keyCode('right'
 --   hs.layout.apply(windowLayout)
 -- end)
 
--- hs.hotkey.bind(hyper, "F1", function()
---   local macbook = "Color LCD"
---   local iMac = "iMac"
---   local thunderbolt = "Thunderbold Display"
---   if (hs.screen.allScreens()[1]:name() == macbook) then
---     if (hs.screen.allScreens()[2]) then
---       if (hs.screen.allScreens()[2]:name() == thunderbolt) then
---         -- dual display for work
---         local windowLayout = {
---             {"Google Chrome", nil, thunderbolt, hs.layout.left50,  nil, nil},
---             {"iTerm", nil, thunderbolt, hs.layout.right50, nil, nil},
---             {"Messages", nil, macbook, hs.layout.right30, nil, nil},
---             {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
---             {"Gitter", nil, macbook, hs.layout.right30, nil, nil},
---             {"nvALT", nil, macbook, hs.layout.right30, nil, nil},
---         }
---         hs.layout.apply(windowLayout)
---       elseif (hs.screen.allScreens()[2]:name() == iMac) then
---         -- dual display for home
---         local windowLayout = {
---             {"Google Chrome", nil, iMac, hs.layout.left50,  nil, nil},
---             {"iTerm", nil, iMac, hs.layout.right50, nil, nil},
---             {"Messages", nil, macbook, hs.layout.right30, nil, nil},
---             {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
---             {"Gitter", nil, macbook, hs.layout.right30, nil, nil},
---             {"nvALT", nil, macbook, hs.layout.right30, nil, nil},
---         }
---         hs.layout.apply(windowLayout)
---       end
---     else
---       -- macbook screen only, WORK
---       local windowLayout = {
---           {"Google Chrome", nil, macbook, hs.layout.left70,  nil, nil},
---           {"iTerm", nil, macbook, hs.layout.right30, nil, nil},
---           {"Messages", nil, macbook, hs.layout.right30, nil, nil},
---           {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
---           {"Gitter", nil, macbook, hs.layout.right30, nil, nil},
---           {"nvALT", nil, macbook, hs.layout.right30, nil, nil},
---       }
---       hs.layout.apply(windowLayout)
---     end
---   elseif (hs.screen.allScreens()[1]:name() == thunderbolt) then
---     -- thunderbolt screen only
---     local windowLayout = {
---         {"Google Chrome", nil, thunderbolt, hs.layout.left50,  nil, nil},
---         {"iTerm", nil, thunderbolt, hs.layout.right50, nil, nil},
---         {"Messages", nil, thunderbolt, hs.layout.left25, nil, nil},
---         {"Tweetbot", nil, thunderbolt, hs.layout.left25, nil, nil},
---         {"Gitter", nil, thunderbolt, hs.layout.left25, nil, nil},
---         {"nvALT", nil, thunderbolt, hs.layout.left25, nil, nil},
---     }
---     hs.layout.apply(windowLayout)
---   elseif (hs.screen.allScreens()[1]:name() == iMac) then
---     -- iMac screen only, HOME
---     local windowLayout = {
---         {"Google Chrome", nil, iMac, hs.layout.left50,  nil, nil},
---         {"iTerm", nil, iMac, hs.layout.right50, nil, nil},
---         {"Messages", nil, iMac, hs.layout.left25, nil, nil},
---         {"Tweetbot", nil, iMac, hs.layout.left25, nil, nil},
---         {"Gitter", nil, iMac, hs.layout.left25, nil, nil},
---         {"nvALT", nil, iMac, hs.layout.left25, nil, nil},
---     }
---     hs.layout.apply(windowLayout)
---   end
--- end)
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "P", function()
+  local macbook = "Color LCD"
+  local thunderbolt = "Thunderbolt Display"
+  local thunderboltMain = hs.screen.allScreens()[0]
+  local thunderboltRight = hs.screen.allScreens()[3]
+  if (hs.screen.allScreens()[1]:name() == thunderbolt) then
+    print(thunderboltMain)
+    local windowLayout = {
+        {"Firefox", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"iTunes", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"Google Chrome", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"Xcode", nil, thunderboltMain, hs.layout.maximized,  nil, nil},
+        {"Sublime Text", nil, thunderboltMain, hs.layout.right50,  nil, nil},
+        {"Calendar", nil, thunderboltRight, hs.layout.right50,  nil, nil},
+        {"PureCloud", nil, macbook, hs.layout.right50,  nil, nil},
+        {"Mail", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Slack", nil, macbook, hs.layout.left50,  nil, nil},
+        {"iTerm", nil, thunderboltMain, hs.layout.maximized, nil, nil},
+        {"Messages", nil, macbook, hs.layout.right30, nil, nil},
+        -- {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
+        {"nvALT", nil, thunderboltRight, hs.layout.left30, nil, nil},
+        {"pwSafe", nil, macbook, hs.layout.left50, nil, nil},
+        {"Skim", nil, thunderboltRight, hs.layout.right50, nil, nil},
+        {"Preview", nil, thunderboltRight, hs.layout.right50, nil, nil},
+    }
+    hs.layout.apply(windowLayout)
+  end
+end)
 
 --
 -- Turn off Animations.

@@ -1,4 +1,6 @@
 [alias]
+  # Latest tag across branches
+  t = !"git describe --tags `git rev-list --tags --max-count=1`"
   # Show verbose output about tags, branches or remotes
   tags = tag -l
   remotes = remote -v

@@ -5,6 +5,9 @@ set nocompatible
 " Leader
 let mapleader = " "
 
+" Local Leader
+:let maplocalleader = "\\"
+
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup

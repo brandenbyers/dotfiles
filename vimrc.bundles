@@ -57,8 +57,7 @@ Plugin 'othree/eregex.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'file:///Users/branden/Code/vim-swift'
 Plugin 'keith/sourcekittendaemon.vim'
-Plugin 'KabbAmine/vCoolor.vim'
-Plugin 'vim-scripts/DrawIt'
+Plugin 'freitass/todo.txt-vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
