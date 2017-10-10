@@ -28,17 +28,6 @@ root: ~/
 # post: tmux -CC attach -t home
 #
 windows:
-  - task:
-      layout: 08d9,318x74,0,0[318x57,0,0{99x57,0,0[99x9,0,0,159,99x28,0,10,167,99x18,0,39,163],113x57,100,0,162,104x57,214,0[104x16,214,0,164,104x24,214,17,165,104x15,214,42,166]},318x16,0,58,160]
-      panes:
-        - task sync && tmux select-pane -t 4 && clear && task blocked
-        - task complete-simple project:inin
-        - task next project:inin
-        - task ready
-        - task ghistory.monthly
-        - task summary
-        - task calendar
-        - task burndown.daily
   - collaborate:
       layout: even-horizontal
       root: ~/Projects/ios-collaborate
@@ -54,7 +43,7 @@ windows:
         -
   - make-org:
       layout: even-horizontal
-      root: ~/Projects/make-org
+      root: ~/Projects/fresco
       panes:
         -
         -
@@ -80,3 +69,14 @@ windows:
         -
         -
         -
+  - task:
+      layout: 08d9,318x74,0,0[318x57,0,0{99x57,0,0[99x9,0,0,159,99x28,0,10,167,99x18,0,39,163],113x57,100,0,162,104x57,214,0[104x16,214,0,164,104x24,214,17,165,104x15,214,42,166]},318x16,0,58,160]
+      panes:
+        - task sync && tmux select-pane -t 4 && clear && task blocked
+        - task complete-simple project:inin
+        - task next project:inin
+        - task ready
+        - task ghistory.monthly
+        - task summary
+        - task calendar
+        - task burndown.daily

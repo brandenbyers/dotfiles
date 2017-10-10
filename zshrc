@@ -129,6 +129,11 @@ eval "$(pyenv init -)"
 source /usr/local/Cellar/todo-txt/2.10/etc/bash_completion.d/todo_completion complete -F _todo t
 alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/Dropbox/Notes/todo/todo.cfg'
 
+# Exercism CLI
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi
+
 BASHPROFILE="$HOME/.bash_profile"
 if [[ -n $BASHPROFILE ]]; then
   source $BASHPROFILE

@@ -1,3 +1,5 @@
+hs.hotkey.bind({"cmd", "alt"}, "V", function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end)
+
 -- local function keyCode(key)
 --   return function() hs.eventtap.keyStroke({}, key) end
 -- end
@@ -185,21 +187,52 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "P", function()
     print(thunderboltMain)
     local windowLayout = {
         {"Firefox", nil, thunderboltRight, hs.layout.left50,  nil, nil},
-        {"iTunes", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"Safari", nil, thunderboltRight, hs.layout.left50,  nil, nil},
         {"Google Chrome", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"iTunes", nil, thunderboltRight, hs.layout.left50,  nil, nil},
+        {"AutoCAD 2017", nil, thunderboltMain, hs.layout.maximized,  nil, nil},
+        {"iTerm", nil, thunderboltMain, hs.layout.maximized, nil, nil},
         {"Xcode", nil, thunderboltMain, hs.layout.maximized,  nil, nil},
         {"Sublime Text", nil, thunderboltMain, hs.layout.right50,  nil, nil},
+        {"Reminders", nil, thunderboltRight, hs.layout.right30,  nil, nil},
         {"Calendar", nil, thunderboltRight, hs.layout.right50,  nil, nil},
+        {"Discord", nil, macbook, hs.layout.right50,  nil, nil},
         {"PureCloud", nil, macbook, hs.layout.right50,  nil, nil},
         {"Mail", nil, macbook, hs.layout.left50,  nil, nil},
         {"Slack", nil, macbook, hs.layout.left50,  nil, nil},
-        {"iTerm", nil, thunderboltMain, hs.layout.maximized, nil, nil},
+        {"Gitter", nil, macbook, hs.layout.left50,  nil, nil},
         {"Messages", nil, macbook, hs.layout.right30, nil, nil},
-        -- {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
+        {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
         {"nvALT", nil, thunderboltRight, hs.layout.left30, nil, nil},
         {"pwSafe", nil, macbook, hs.layout.left50, nil, nil},
         {"Skim", nil, thunderboltRight, hs.layout.right50, nil, nil},
         {"Preview", nil, thunderboltRight, hs.layout.right50, nil, nil},
+    }
+    hs.layout.apply(windowLayout)
+  else
+    print(macbook)
+    local windowLayout = {
+        {"Firefox", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Safari", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Google Chrome", nil, macbook, hs.layout.left50,  nil, nil},
+        {"iTunes", nil, macbook, hs.layout.left50,  nil, nil},
+        {"AutoCAD 2017", nil, macbook, hs.layout.maximized,  nil, nil},
+        {"iTerm", nil, macbook, hs.layout.maximized, nil, nil},
+        {"Xcode", nil, macbook, hs.layout.maximized,  nil, nil},
+        {"Sublime Text", nil, macbook, hs.layout.right50,  nil, nil},
+        {"Reminders", nil, macbook, hs.layout.right30,  nil, nil},
+        {"Calendar", nil, macbook, hs.layout.right50,  nil, nil},
+        {"Discord", nil, macbook, hs.layout.right50,  nil, nil},
+        {"PureCloud", nil, macbook, hs.layout.right50,  nil, nil},
+        {"Mail", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Slack", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Gitter", nil, macbook, hs.layout.left50,  nil, nil},
+        {"Messages", nil, macbook, hs.layout.right30, nil, nil},
+        {"Tweetbot", nil, macbook, hs.layout.right30, nil, nil},
+        {"nvALT", nil, macbook, hs.layout.left30, nil, nil},
+        {"pwSafe", nil, macbook, hs.layout.left30, nil, nil},
+        {"Skim", nil, macbook, hs.layout.right50, nil, nil},
+        {"Preview", nil, macbook, hs.layout.right50, nil, nil},
     }
     hs.layout.apply(windowLayout)
   end
