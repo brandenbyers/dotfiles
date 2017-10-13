@@ -41,7 +41,7 @@ windows:
         -
         -
         -
-  - make-org:
+  - fresco:
       layout: even-horizontal
       root: ~/Projects/fresco
       panes:
