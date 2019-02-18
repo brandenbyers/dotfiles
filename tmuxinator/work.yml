@@ -34,34 +34,24 @@ windows:
       panes:
         -
         -
-  - api-tests:
-      layout: even-horizontal
-      root: ~/Projects/mobile-api-tests
-      panes:
-        -
-        -
-        -
   - fresco:
       layout: even-horizontal
       root: ~/Projects/fresco
       panes:
         -
         -
-        -
-  - hubot:
+  - android:
       layout: even-horizontal
-      root: ~/Projects/hubot-mobile
+      root: ~/Projects/pure-cloud-connect-android
       panes:
         -
         -
+  - andios:
+      layout: even-horizontal
+      root: ~/Projects/andios-jenkins-scripts
+      panes:
         -
-  - mail:
-      panes:
-        - mutt
-        - profanity
-  - cmus:
-      panes:
-        - cmus
+        -
   - scratch:
       layout: even-horizontal
       root: ~/Code/scratch
@@ -69,14 +59,14 @@ windows:
         -
         -
         -
-  - task:
-      layout: 08d9,318x74,0,0[318x57,0,0{99x57,0,0[99x9,0,0,159,99x28,0,10,167,99x18,0,39,163],113x57,100,0,162,104x57,214,0[104x16,214,0,164,104x24,214,17,165,104x15,214,42,166]},318x16,0,58,160]
-      panes:
-        - task sync && tmux select-pane -t 4 && clear && task blocked
-        - task complete-simple project:inin
-        - task next project:inin
-        - task ready
-        - task ghistory.monthly
-        - task summary
-        - task calendar
-        - task burndown.daily
+  #- task:
+      #layout: 08d9,318x74,0,0[318x57,0,0{99x57,0,0[99x9,0,0,159,99x28,0,10,167,99x18,0,39,163],113x57,100,0,162,104x57,214,0[104x16,214,0,164,104x24,214,17,165,104x15,214,42,166]},318x16,0,58,160]
+      #panes:
+        #- task sync && tmux select-pane -t 4 && clear && task blocked
+        #- task complete-simple project:inin
+        #- task next project:inin
+        #- task ready
+        #- task ghistory.monthly
+        #- task summary
+        #- task calendar
+

@@ -9,14 +9,11 @@ setopt promptsubst
 export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
 
 # load our own completion functions
-fpath=(~/.zsh/completion $fpath)
+#fpath=(~/.zsh/completion $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Use exit or logout instead of ctrl-d
 setopt ignoreeof
-
-# completion
-autoload -U compinit
-compinit
 
 # load custom executable functions
 # for function in ~/.zsh/functions/*; do
@@ -117,22 +114,35 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Swift 2.2
-export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+#export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+
+# LLVM
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Things 3 CLI
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi
+
+# OTTO
+#export CC=clang
+#export CXX=clang++
+#export CXXFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/include"
+#export LDFLAGS="-L/usr/local/lib $(brew info llvm | grep LDFLAGS= | cut -d = -f 2 | tr '"' ' ')"
 
 # Tmuxinator
 source ~/bin/tmuxinator.zsh
 
 # Pyenv Python
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Todo.txt
-source /usr/local/Cellar/todo-txt/2.10/etc/bash_completion.d/todo_completion complete -F _todo t
-alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/Dropbox/Notes/todo/todo.cfg'
+#source /usr/local/Cellar/todo-txt/2.10/etc/bash_completion.d/todo_completion complete -F _todo t
+#alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/Dropbox/Notes/todo/todo.cfg'
 
-# Exercism CLI
-if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
-  . ~/.config/exercism/exercism_completion.zsh
-fi
+# Fastlane
+#export PATH="$HOME/.fastlane/bin:$PATH"
 
 BASHPROFILE="$HOME/.bash_profile"
 if [[ -n $BASHPROFILE ]]; then
@@ -145,3 +155,34 @@ fi
 
 # Genesys
 source ~/setgenenv.sh
+
+# Antigen
+#source /usr/local/share/antigen/antigen.zsh
+
+# Analytics UI
+export QUEUES_ENGINE_DEV_MODE
+QUEUES_ENGINE_DEV_MODE=true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Android Studio
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+
+# Android Emulator
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+
+# Maven (for android)
+export M2_HOME=/usr/local/Cellar/maven/3.6.0/libexec
+export M2=${M2_HOME}/bin
+export PATH=${PATH}:${M2_HOME}/bin
+
+# Flutter
+export PATH=$PATH:/Users/branden/Projects/flutter/bin
+
+# completion
+autoload -U compinit
+compinit
+

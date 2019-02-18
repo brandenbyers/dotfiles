@@ -38,13 +38,14 @@
   untracked = cyan
 
 [user]
-	name = brandenbyers
+	name = Branden Byers
 	email = branden@brandenbyers.com
 [credential]
 	helper = osxkeychain
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
 	default = simple
 [github]
@@ -55,3 +56,8 @@
 	autosetuprebase = always
 [branch "*branch-name*"]
 	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
